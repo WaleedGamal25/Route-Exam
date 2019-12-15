@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)file:///C:/Users/walee/Desktop/assignment%205/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="An interactive getting started guide for Brackets.">
+	<title>Route</title>
+	<link rel="stylesheet" href="./Route_files/bootstrap.min.css">
+	<link href="./Route_files/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="./Route_files/fontawesome-all.min.css">
+
+	<!--
+	<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="asset/css/hover.css">
+	<link rel="stylesheet" href="asset/css/animate.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css">
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+-->
+	<link rel="stylesheet" href="./Route_files/style.css">
+	<link rel="stylesheet" href="./Route_files/media.css">
+</head>
+
+<body>
+
+	<!--
+	
+	<div class="container py-5">
+     <label class="my-3">Name</label>
+      <input type="text" required id="name" class="form-control">
+     <label class="my-3">Age</label>      
+      <input type="number" required id="age" class="form-control">
+     <label class="my-3">Education</label>      
+      <input type="text" required id="education" class="form-control">
+     <label class="my-3">Date</label>      
+      <input type="text" id="date" class="form-control">
+      <button class="btn btn-danger float-right my-5" onclick="dataClinet()">Send to console</button>
+	</div>
+	
+	<table class="table w-75">
+		<thead>
+			<th>Name</th>
+			<th>Age</th>
+			<th>Education</th>
+			<th>Data</th>
+		</thead>
+		<tbody id="tableBody">
+			
+		</tbody>
+	</table>
+-->
+
+
+<!--
+	<section class="all-data my-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<input class="form-control my-3" type="text" placeholder="Name" id="name">
+				</div>
+				<div class="col-md-6">
+					<input class="form-control my-3" type="text" placeholder="Age" id="age">
+				</div>
+				<div class="col-md-6">
+					<input class="form-control my-3" type="text" placeholder="Education" id="education">
+				</div>
+				<div class="col-md-6">
+					<input class="form-control my-3" type="text" placeholder="Experience" id="experience">
+				</div>
+			</div>
+			<button onclick="allData()" class="btn btn-danger center-block text-center" id="btn">Add data</button>
+		</div>
+	</section>
+
+	<div class="container">
+		<table class="table">
+			<thead>
+				<th>Name</th>
+				<th>Age</th>
+				<th>Education</th>
+				<th>Experience</th>
+			</thead>
+			<tbody id="tableBody">
+
+			</tbody>
+		</table>
+	</div>
+
+-->
+
+
+
+
+
+<section class="my-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group my-3">
+					<label>Product Name</label>
+					<input class="form-control" type="text" id="name" placeholder="Name">
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group my-3">
+					<label>Product Category</label>
+					<input class="form-control" type="text" id="category" placeholder="category">
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group my-3">
+					<label>Product Price</label>
+					<input class="form-control" type="text" id="price" placeholder="Price">
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group my-3">
+					<label>Choose Photo</label>
+					<input class="form-control" type="file" id="photo" placeholder="Photo">
+				</div>
+			</div>			
+			<div class="col-md-12">
+				<div class="form-group my-3">
+					<label>Description</label>
+				<textarea class="form-control" id="desc"></textarea>
+				</div>
+			</div>									
+		</div>
+             <button class="btn btn-danger" onclick="addProduct()">Add Product</button>
+	</div>
+</section>
+
+<section class="products">
+	<div class="container">
+	<h2 class="text-center my-3">Our Products</h2>
+	<input type="text" onkeyup="searchProduct(this.value)" class="form-control my-5 w-50 m-auto" placeholder="Search">
+		<div class="row" id="show">
+			<div class="col-md-4 my-2">
+                <img src="./Route_files/4.jpg" class="img-fluid">				
+				<h3>Toyota</h3>
+				<h4>2010</h4>
+				<h5>200000</h5>
+				<p>this is good ldf dl dl ska l</p>               
+                <button onclick="deleteProduct(0)" class="btn btn-outline-danger btn-sm">Delete</button>
+                <button onclick="updateProduct()" class="btn btn-outline-primary btn-sm">Update</button>
+
+			</div>	
+
+			<div class="col-md-4 my-2">
+                <img src="./Route_files/4.jpg" class="img-fluid">				
+				<h3>Iphone</h3>
+				<h4>Mobile</h4>
+				<h5>50000</h5>
+				<p>Iphone 6 is a good mobile for calling and take pictures and pla</p>               
+                <button onclick="deleteProduct(1)" class="btn btn-outline-danger btn-sm">Delete</button>
+                <button onclick="updateProduct()" class="btn btn-outline-primary btn-sm">Update</button>
+
+			</div>	
+
+			<div class="col-md-4 my-2">
+                <img src="./Route_files/4.jpg" class="img-fluid">				
+				<h3>mercedes</h3>
+				<h4>car</h4>
+				<h5>7000000</h5>
+				<p>waleed</p>               
+                <button onclick="deleteProduct(2)" class="btn btn-outline-danger btn-sm">Delete</button>
+                <button onclick="updateProduct()" class="btn btn-outline-primary btn-sm">Update</button>
+
+			</div>	
+
+			<div class="col-md-4 my-2">
+                <img src="./Route_files/4.jpg" class="img-fluid">				
+				<h3>Waleed</h3>
+				<h4>Gamal</h4>
+				<h5>202020</h5>
+				<p>20202 2 8 52 2 92</p>               
+                <button onclick="deleteProduct(3)" class="btn btn-outline-danger btn-sm">Delete</button>
+                <button onclick="updateProduct()" class="btn btn-outline-primary btn-sm">Update</button>
+
+			</div>	
+</div>
+	</div>
+</section>
+
+
+
+
+
+
+
+
+
+	<script src="./Route_files/jquery-1.12.4.min.js.download"></script>
+	<script src="./Route_files/popper-min.js.download"></script>
+	<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+	<script src="./Route_files/bootstrap.min.js.download"></script>
+	<script src="./Route_files/wow.min.js.download"></script>
+	<!--
+	<script>
+		new WOW().init();
+		});
+
+	</script>
+-->
+
+	<script src="./Route_files/typed.js.download"></script>
+	<script src="./Route_files/script.js.download"></script>
+
+
+
+
+</body></html>

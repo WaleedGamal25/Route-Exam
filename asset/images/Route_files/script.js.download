@@ -1,0 +1,146 @@
+var inputs = document.getElementsByClassName('form-control');
+var productsContainer;
+if (localStorage.getItem("productsData") == null) {
+	productsContainer = [];
+} else {
+
+	productsContainer = JSON.parse(localStorage.getItem("productsData"));
+	displayData();
+
+}
+
+
+
+function addProduct() {
+
+	var name = document.getElementById('name').value;
+	var category = document.getElementById('category').value;
+	var price = document.getElementById('price').value;
+	var desc = document.getElementById('desc').value;
+
+	var allData = {
+		name: name,
+		category: category,
+		price: price,
+		desc: desc,
+
+	};
+
+
+	productsContainer.push(allData);
+	localStorage.setItem("productsData", JSON.stringify(productsContainer));
+	displayData();
+	clearInputs();
+
+
+};
+
+
+function displayData() {
+
+	temp = "";
+	for (i = 0; i < productsContainer.length; i++) {
+
+		temp += `
+			<div class="col-md-4 my-2">
+                <img src="images/4.jpg" class="img-fluid">				
+				<h3>` + productsContainer[i].name + `</h3>
+				<h4>` + productsContainer[i].category + `</h4>
+				<h5>` + productsContainer[i].price + `</h5>
+				<p>` + productsContainer[i].desc + `</p>               
+                <button onclick="deleteProduct(`+i+`)" class="btn btn-outline-danger btn-sm">Delete</button>
+                <button onclick="updateProduct()" class="btn btn-outline-primary btn-sm">Update</button>
+
+			</div>	
+`
+
+	}
+
+	document.getElementById("show").innerHTML = temp;
+
+};
+
+
+function clearInputs() {
+
+	for (i = 0; i < inputs.length; i++) {
+
+		inputs[i].value = '';
+
+	}
+
+};
+
+function searchProduct(term)
+{
+	temp = ``;
+	for ( i=0; i< productsContainer.length;i++ ){
+		
+		if (productsContainer[i].name.toLowerCase().includes(term.toLowerCase()))
+			{
+				temp+=`
+			<div class="col-md-4 my-2">
+                <img src="images/4.jpg" class="img-fluid">				
+				<h3>` + productsContainer[i].name + `</h3>
+				<h4>` + productsContainer[i].category + `</h4>
+				<h5>` + productsContainer[i].price + `</h5>
+				<p>` + productsContainer[i].desc + `</p>
+                <button onclick="deleteProduct(`+i+`)" class="btn btn-outline-danger btn-sm">Delete</button>
+                <button onclick="updateProduct()" class="btn btn-outline-primary btn-sm">Update</button>
+			</div>	
+`
+			}
+		
+	}
+	document.getElementById("show").innerHTML = temp;
+}
+
+
+function deleteProduct(indx)
+{
+	 productsContainer.splice(indx, 1);
+	localStorage.setItem("productsData", JSON.stringify(productsContainer));
+	displayData();	
+}
+
+//
+//var x = 5;
+//let y = 10;
+//const z = 20;
+//
+//for (var i=0;i<5;i++ ){
+//	console.log("waleed")
+//}
+//
+//console.log(y)
+//
+//let welcome = function(name="waleed", age=25)
+//{
+//	console.log(`Hello My Name is ${name} and i am ${age} Years Old`)
+//}
+//
+//welcome()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
